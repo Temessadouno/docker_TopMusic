@@ -1,0 +1,90 @@
+version: "3.9"
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - meteo-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: pass
+      ME_CONFIG_BASICAUTH_USERNAME: ""
+      ME_CONFIG_BASICAUTH_PASSWORD: ""
+    depends_on:
+      - mongo
+    networks:
+      - meteo-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  backend:
+    build: ./backend
+    image: meteo-backend:1.0.0
+    container_name: backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URL: mongodb://admin:pass@mongo:27017/?authSource=admin
+    volumes:
+      # Monte les sources JS directement — nodemon recharge automatiquement
+      - ./backend:/app
+      # Exclut node_modules du montage (garde ceux du build)
+      - /app/node_modules
+    depends_on:
+      - mongo
+    networks:
+      - meteo-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  frontend:
+    build: ./frontend
+    image: meteo-frontend:1.0.0
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      # Monte les fichiers HTML/CSS/JS directement dans nginx
+      - ./frontend/index.html:/usr/share/nginx/html/index.html
+      - ./frontend/script.js:/usr/share/nginx/html/script.js
+      - ./frontend/style.css:/usr/share/nginx/html/style.css
+      - ./frontend/musicInterface.html:/usr/share/nginx/html/musicInterface.html
+      - ./frontend/musicScript.js:/usr/share/nginx/html/musicScript.js
+      - ./frontend/musicStyle.css:/usr/share/nginx/html/musicStyle.css
+    depends_on:
+      - backend
+    networks:
+      - meteo-network
+
+volumes:
+  mongo-data:
+
+networks:
+  meteo-network:
+    driver: bridge
