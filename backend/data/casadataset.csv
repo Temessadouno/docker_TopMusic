@@ -1,0 +1,61 @@
+sensor_id,nom,quartier,sous_type,latitude,longitude,adresse,statut
+TRAFIC-001,Échangeur A3 Nord - Aïn Harrouda,Aïn Harrouda,autoroute,33.6421,-7.5021,"Autoroute A3, échangeur Aïn Harrouda, km 12",actif
+TRAFIC-002,Échangeur A3 Sud - Lahraouiyine,Lahraouiyine,autoroute,33.5101,-7.5631,"Autoroute A3, sortie Lahraouiyine, km 8",actif
+TRAFIC-003,Péage Casa-Berrechid,Lahraouiyine,autoroute,33.4921,-7.5481,"Autoroute A7, Péage de Berrechid",actif
+TRAFIC-004,Échangeur Route d'El Jadida,Hay Hassani,autoroute,33.5391,-7.6541,"Autoroute A5, échangeur El Jadida",actif
+TRAFIC-005,Échangeur Route de Rabat,Aïn Sebaa,autoroute,33.6311,-7.5211,"Autoroute A1, sortie nord",actif
+TRAFIC-006,Péage Mohammedia,Aïn Harrouda,autoroute,33.6621,-7.4221,"Autoroute A3, Péage Mohammedia",actif
+TRAFIC-007,Bd Mohammed V - Place ONU,Centre-Ville,boulevard,33.5921,-7.6181,"Boulevard Mohammed V, Place des Nations Unies",actif
+TRAFIC-008,Bd Mohammed V - Gare CTM,Centre-Ville,boulevard,33.5891,-7.6151,"Boulevard Mohammed V, hauteur Gare CTM",actif
+TRAFIC-009,Bd Zerktouni - CFC,Anfa,boulevard,33.5912,-7.6261,"Boulevard Zerktouni, CFC, direction Maarif",actif
+TRAFIC-010,Bd Zerktouni - Rond-point,Maarif,boulevard,33.5862,-7.6311,"Boulevard Zerktouni, Rond-point Maarif",actif
+TRAFIC-011,Bd d'Anfa - Californie,Anfa,boulevard,33.5851,-7.6501,"Boulevard d'Anfa, quartier Californie",actif
+TRAFIC-012,Bd d'Anfa - Polo,Anfa,boulevard,33.5921,-7.6431,"Boulevard d'Anfa, Club Équestre",actif
+TRAFIC-013,Bd Al Massira - Twin Center,Maarif,boulevard,33.5861,-7.6331,"Boulevard Al Massira, Twin Center",actif
+TRAFIC-014,Bd Al Massira - Hay Hassani,Hay Hassani,boulevard,33.5601,-7.6491,"Boulevard Al Massira, entrée Hay Hassani",actif
+TRAFIC-015,Bd Hassan II - Casa-Port,Médina,boulevard,33.5961,-7.6211,"Avenue Hassan II, Port de Casablanca",actif
+TRAFIC-016,Bd Hassan II - Rond-point,Centre-Ville,boulevard,33.5941,-7.6131,"Avenue Hassan II, Rond-point Central",actif
+TRAFIC-017,Bd My Youssef - Derb Sultan,Derb Sultan,boulevard,33.5741,-7.6041,"Boulevard My Youssef, Derb Sultan",actif
+TRAFIC-018,Bd Bir Anzarane - Sidi Bernoussi,Sidi Bernoussi,boulevard,33.6181,-7.5271,"Boulevard Bir Anzarane, Sidi Bernoussi",actif
+TRAFIC-019,Bd Ahl Loghlam - Ben M'sik,Ben M'sik,boulevard,33.5561,-7.5641,"Boulevard Ahl Loghlam, Ben M'sik",actif
+TRAFIC-020,Bd Ghandi - Hay Hassani,Hay Hassani,boulevard,33.5481,-7.6501,"Boulevard Ghandi, marché Hay Hassani",actif
+TRAFIC-021,Route de Fès - Sortie 5,Aïn Sebaa,route,33.6211,-7.5551,"Route de Fès RN1, sortie 5 Aïn Sebaa",actif
+TRAFIC-022,Route de Fès - Carrefour Sidi Bernoussi,Sidi Bernoussi,route,33.6091,-7.5321,"Route de Fès, carrefour Sidi Bernoussi",actif
+TRAFIC-023,Route d'El Jadida - km 5,Hay Hassani,route,33.5281,-7.6621,"Route d'El Jadida RR301, km 5",actif
+TRAFIC-024,Route de Médiouna,Médiouna,route,33.4981,-7.5151,"Route de Médiouna RP2012, km 3",actif
+TRAFIC-025,Route de Bouskoura,Bouskoura,route,33.5151,-7.5981,"Route de Bouskoura RP2014, km 2",actif
+TRAFIC-026,Route de Mohammedia - RN1,Aïn Harrouda,route,33.6481,-7.5011,"Route Nationale 1, direction Mohammedia",actif
+TRAFIC-027,Corniche Ain Diab - km 1,Ain Diab,corniche,33.5941,-7.6651,"Corniche Ain Diab, km 1 Plage Tahiti",actif
+TRAFIC-028,Corniche Ain Diab - km 3,Ain Diab,corniche,33.5961,-7.6811,"Corniche Ain Diab, km 3 Lido",actif
+TRAFIC-029,Corniche Ain Diab - km 5,Ain Diab,corniche,33.5981,-7.6971,"Corniche Ain Diab, km 5 entrée Tamaris",actif
+TRAFIC-030,Bd de la Corniche - Sidi Abderrahmane,Ain Diab,corniche,33.5941,-7.7021,"Corniche, Sidi Abderrahmane",actif
+TRAFIC-031,Rond-point Sidi Maarouf,Sidi Maarouf,carrefour,33.5451,-7.6321,"Rond-point Sidi Maarouf, Technopark",actif
+TRAFIC-032,Carrefour Bd Bir Anzarane / Rte Fès,Sidi Bernoussi,carrefour,33.6151,-7.5301,Intersection Bd Bir Anzarane / Route de Fès,actif
+TRAFIC-033,Rond-point Hay Mohammadi,Hay Mohammadi,carrefour,33.5651,-7.5801,"Rond-point Av. 1er Mars, Hay Mohammadi",actif
+TRAFIC-034,Carrefour Mers Sultan,Centre-Ville,carrefour,33.5841,-7.6201,"Carrefour Mers Sultan, centre",actif
+TRAFIC-035,Rond-point Bourgogne,Bourgogne,carrefour,33.5881,-7.6261,"Rond-point Bourgogne, Bd Ghandi",actif
+TRAFIC-036,Carrefour Sbata,Sbata,carrefour,33.5631,-7.5911,"Carrefour Sbata, Av. Lalla Yacout",actif
+TRAFIC-037,Rond-point Ain Chock,Ain Chock,carrefour,33.5421,-7.6051,"Rond-point Ain Chock, Bd Brahim Roudani",actif
+TRAFIC-038,Carrefour Bd Oqba / Bd Ziraoui,Maarif,carrefour,33.5791,-7.6291,Intersection Bd Oqba Ibn Nafiaa / Bd Ziraoui,actif
+TRAFIC-039,Rond-point Bd Panoramique,Ain Diab,carrefour,33.5921,-7.6601,"Rond-point Bd Panoramique, Ain Diab",actif
+TRAFIC-040,Carrefour My Rachid,Derb Sultan,carrefour,33.5721,-7.6041,Carrefour My Rachid / Bd Brahim Roudani,actif
+TRAFIC-041,Tunnel Bd Hassan II - Entrée,Centre-Ville,tunnel,33.5931,-7.6191,"Tunnel Hassan II, entrée est",actif
+TRAFIC-042,Tunnel Bd Hassan II - Sortie,Centre-Ville,tunnel,33.5951,-7.6171,"Tunnel Hassan II, sortie ouest",actif
+TRAFIC-043,Viaduc Bd de la Résistance,Centre-Ville,pont,33.5911,-7.6141,"Viaduc Bd de la Résistance, zone portuaire",actif
+TRAFIC-044,Entrée Nouvelle Médina,Ain Chock,peripherie,33.5311,-7.6191,"Boulevard Moulay Rachid, entrée Nouvelle Médina",actif
+TRAFIC-045,Axe Sidi Maarouf - CFC,Sidi Maarouf,peripherie,33.5491,-7.6281,"Av. Sidi Maarouf, liaison CFC",actif
+TRAFIC-046,Zone Industrielle Ain Sebaa,Ain Sebaa,peripherie,33.6101,-7.5251,Avenue principale ZI Ain Sebaa,actif
+TRAFIC-047,Zone Industrielle Sidi Bernoussi,Sidi Bernoussi,peripherie,33.6221,-7.5191,Bd principal ZI Sidi Bernoussi,actif
+TRAFIC-048,Axe Hay Moulay Rachid,Hay Moulay Rachid,peripherie,33.5261,-7.5871,Avenue principale Hay Moulay Rachid,actif
+TRAFIC-049,Bd Chefchaouni - Sbata,Sbata,peripherie,33.5591,-7.5841,"Boulevard Chefchaouni, Sbata",actif
+TRAFIC-050,Axe Roches Noires,Roches Noires,peripherie,33.5981,-7.5742,"Avenue Lalla Yacout, Roches Noires",actif
+TRAFIC-051,Accès Gare Casa-Port,Médina,gare,33.5981,-7.6191,"Parvis Gare Casa-Port, Av. Hassan II",actif
+TRAFIC-052,Accès Gare Casa-Voyageurs,Mers Sultan,gare,33.5841,-7.6251,"Parvis Gare Casa-Voyageurs, Bd Ba Hmad",actif
+TRAFIC-053,Accès Gare Oasis,Oasis,gare,33.5641,-7.6271,"Av. Omar Ibn El Khattab, Gare Oasis",actif
+TRAFIC-054,Route Aéroport CMN - km 3,Nouaceur,aeroport,33.5371,-7.6691,"Route Aéroport Mohammed V, km 3",actif
+TRAFIC-055,Route Aéroport CMN - km 8,Nouaceur,aeroport,33.4951,-7.6871,"Route Aéroport Mohammed V, km 8",actif
+TRAFIC-056,Accès Port de Casablanca,Médina,port,33.5991,-7.6181,"Quai de la Douane, accès Port principal",actif
+TRAFIC-057,Zone Logistique Zenata,Zenata,port,33.6511,-7.4811,"Zone Logistique Zenata, axe principal",actif
+TRAFIC-058,Tramway T1 - Station Sidi Bernoussi,Sidi Bernoussi,tram,33.6101,-7.5381,"Station Tramway Sidi Bernoussi, ligne T1",actif
+TRAFIC-059,Tramway T1 - Station My Youssef,Derb Sultan,tram,33.5741,-7.6091,"Station Tramway My Youssef, ligne T1",actif
+TRAFIC-060,Tramway T1 - Station Hassan II,Centre-Ville,tram,33.5921,-7.6201,"Station Tramway Hassan II, ligne T1",actif

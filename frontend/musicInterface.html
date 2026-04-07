@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MéteoPro — Musique</title>
+  <title>TMT-Pro — Musique</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="musicStyle.css"/>
 </head>
 <body>
 
-<!-- HEADER (identique météo) -->
+<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
     <div class="logo">
@@ -22,7 +24,7 @@
       <a class="mode-btn" href="./index.html">
         <span class="mode-icon">⊞</span> Dashboard
       </a>
-      <a class="mode-btn" href="./index.html#graph" onclick="sessionStorage.setItem('mode','graph')">
+      <a class="mode-btn" href="./index.html" onclick="sessionStorage.setItem('mode','graph')">
         <span class="mode-icon">◎</span> Graphique
       </a>
       <a class="mode-btn active" href="./musicInterface.html">
@@ -32,7 +34,7 @@
   </div>
 </header>
 
-<!-- SEARCH BAR (même structure que météo) -->
+<!-- SEARCH BAR -->
 <section class="search-section">
   <div class="search-box">
     <input type="text" id="musicInput" placeholder="Artiste, titre, album…" autocomplete="off"
@@ -59,12 +61,17 @@
       </button>
       <button class="music-nav-btn" id="nav-library" onclick="switchView('library')">
         <span class="nav-icon">◈</span>
-        <span>Bibliothèque</span>
+        <span>Playlist</span>
         <span class="lib-badge" id="lib-count">0</span>
+      </button>
+      <button class="music-nav-btn" id="nav-map" onclick="switchView('map')">
+        <span class="nav-icon">⊕</span>
+        <span>Carte</span>
+        <span class="lib-badge" id="map-count">0</span>
       </button>
     </nav>
 
-    <!-- Piste en cours (sidebar) -->
+    <!-- Piste en cours -->
     <div class="now-playing-sidebar" id="now-playing-sidebar">
       <div class="np-label">En cours</div>
       <div class="np-cover" id="np-cover-side"></div>
@@ -96,13 +103,39 @@
       </div>
     </section>
 
+    <!-- VUE CARTE -->
+    <section class="music-view" id="view-map">
+      <div class="map-header">
+        <h2 class="section-title">
+          Carte des artistes <span class="history-count" id="map-subtitle">0 artiste localisé</span>
+        </h2>
+        <button class="map-clear-btn" onclick="clearMap()" title="Effacer tous les marqueurs">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+          </svg>
+          Effacer
+        </button>
+      </div>
+
+      <!-- Légende des recherches -->
+      <div class="map-legend" id="map-legend"></div>
+
+      <!-- Carte Leaflet -->
+      <div id="map-container"></div>
+
+      <!-- État vide -->
+      <div class="map-empty" id="map-empty">
+        <div style="font-size:2.5rem;margin-bottom:12px">🗺️</div>
+        <div>Lance une recherche pour voir les artistes sur la carte</div>
+        <div style="font-size:0.78rem;margin-top:6px;color:var(--muted)">Chaque recherche ajoute de nouveaux marqueurs</div>
+      </div>
+    </section>
+
   </main>
 </div>
 
 <!-- PLAYER BAS DE PAGE -->
 <footer class="music-player" id="music-player">
-
-  <!-- Infos piste -->
   <div class="player-track">
     <div class="player-cover" id="player-cover"></div>
     <div class="player-meta">
@@ -112,23 +145,17 @@
     <button class="save-btn-player" id="save-btn-player" title="Sauvegarder" onclick="saveCurrentTrack()">♡</button>
   </div>
 
-  <!-- Contrôles -->
   <div class="player-controls">
     <div class="player-btns">
       <button class="ctrl-btn" onclick="playPrev()" title="Précédent">
-        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/>
-        </svg>
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
       </button>
       <button class="play-main" id="play-btn" onclick="togglePlay()" disabled>
-        <svg id="play-icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z"/>
-        </svg>
+        <svg id="play-icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
       <button class="ctrl-btn" onclick="playNext()" title="Suivant">
         <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-          <path d="m6 18 8.5-6L6 6v12zm2-6 8.5 6V6z"/>
-          <rect x="16" y="6" width="2" height="12"/>
+          <path d="m6 18 8.5-6L6 6v12zm2-6 8.5 6V6z"/><rect x="16" y="6" width="2" height="12"/>
         </svg>
       </button>
     </div>
@@ -141,24 +168,23 @@
     </div>
   </div>
 
-  <!-- Volume + badge -->
   <div class="player-right">
     <span class="preview-badge">Aperçu 30s</span>
     <div class="vol-row">
-      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" style="color:var(--muted); flex-shrink:0">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" style="color:var(--muted);flex-shrink:0">
         <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
       </svg>
       <input type="range" class="vol-slider" id="vol-slider" min="0" max="1" step="0.05" value="0.8"
              oninput="setVolume(this.value)"/>
     </div>
   </div>
-
 </footer>
 
-<!-- TOAST -->
 <div id="toast" class="music-toast"></div>
-
 <audio id="audio" preload="none"></audio>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="musicScript.js"></script>
 </body>
 </html>

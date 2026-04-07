@@ -7,7 +7,7 @@ Application fullstack météo + musique avec graphiques interactifs, lecteur aud
 ```
 winter/
 ├── backend/
-│   ├── server.js               # API Express
+│   ├── root.js               # API 
 │   ├── controller.js           # Routes météo
 │   ├── musicController.js      # Routes musique (Deezer + MongoDB)
 │   ├── db.js                   # Connexion MongoDB
@@ -51,7 +51,7 @@ docker build -t meteo-backend:1.0.0 ./backend
 docker build -t meteo-frontend:1.0.0 ./frontend
 
 # 2. Lancer tous les services
-docker-compose up -d
+docker-compose up --build -d
 ```
 
 ---

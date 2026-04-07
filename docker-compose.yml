@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-
+#Service Mongo pour le stockage des données
   mongo:
     image: mongo
     container_name: mongo
@@ -18,7 +18,7 @@ services:
     dns:
       - 8.8.8.8
       - 8.8.4.4
-
+#Service Mongo Express pour l'administration de la base de données via une interface web
   mongo-express:
     image: mongo-express:latest
     container_name: mongo-express
@@ -39,7 +39,7 @@ services:
     dns:
       - 8.8.8.8
       - 8.8.4.4
-
+#Service Backend pour la logique métier et l'API
   backend:
     build: ./backend
     image: meteo-backend:1.0.0
@@ -61,7 +61,7 @@ services:
     dns:
       - 8.8.8.8
       - 8.8.4.4
-
+#Service Frontend pour l'interface utilisateur
   frontend:
     build: ./frontend
     image: meteo-frontend:1.0.0
